@@ -1,0 +1,92 @@
+.ft-bold {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.ft-regular {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.ft-console {
+    font-family: "Sedan", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.ft-console-italic {
+    font-family: "Sedan", serif;
+    font-weight: 400;
+    font-style: italic;
+}
+
+/* Main CSS */
+
+body {
+    background-color: #191919;
+    font-size: 62.5%
+}
+
+#game {
+    max-width: 500px;
+    max-height: 400px;
+    font-size: 1rem;
+    background-color: #303030;
+    color: white;
+    margin: 0 auto;
+    padding: 10px;
+    border-radius: 12px;
+    border: 1px solid #5c5c5c;
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.05);
+}
+
+#controls {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-top: 8px;
+}
+
+.actionButton {
+    margin: 0;
+    padding: 6px 12px;
+    border-radius: 8px;
+    border: 1px solid #7e7e7e;
+    color: #fff;
+    background-color: #191919;
+    transition: ease 0.2s;
+}
+
+.actionButton:hover {
+    background-color: #313131;
+    transition: ease 0.2s;
+}
+
+#stats {
+    color: #fff;
+    padding: 5px;
+    border-radius: 6px 6px 0 0; 
+}
+
+#text {
+    margin-top: 8px;
+    background-color: black;
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+#monsterStats {
+    display: none;
+    color: white;
+    padding: 5px;
+    background-color: red;
+}
+
+.stat {
+    padding-right: 10px;
+}

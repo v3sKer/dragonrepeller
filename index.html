@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v3sker | Dragon Repeller</title>
+    <link rel="icon" href="/assets/img/favicon.png">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- FontAwesome -->
+    <script src="https://kit.fontawesome.com/83be326cca.js" crossorigin="anonymous"></script>
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Sedan:ital@0;1&display=swap" rel="stylesheet">
+</head>
+
+<body onload="statsUpdate()">
+<div id="game">
+    <div id="stats">
+        <span class="ft-bold stat"><i class="fas fa-heart" style="color: #b60000;"></i> <strong><span id="healthText">0</span></strong></span>
+        <span class="ft-bold stat"><i class="fas fa-coins" style="color: #ffe600;"></i> <strong><span id="goldText">0</span></strong></span>
+        <span class="ft-bold stat">XP: <strong><span id="xpText">0</span></strong></span>
+</div>
+    <div id="controls">
+        <button id="button1" class="ft-regular actionButton">Go to store</button>
+        <button id="button2" class="ft-regular actionButton">Go to cave</button>
+        <button id="button3" class="ft-regular actionButton">Fight dragon</button>
+    </div>
+    <div id="monsterStats">
+        <span class="stat">Monster Name: <strong><span id="monsterName"></span></strong></span>
+        <span class="stat">Health: <strong><span id="monsterHealth"></span></strong></span>
+    </div>
+    <div class="ft-console" id="text">Welcome to Dragon Repeller!<br>
+        <br>In this game, you must defeat the dragon that is preventing people from leaving the town.<br>
+        <br>Now you are in the town square. 
+        <br>Where do you want to go? Use the buttons above.</div>
+</div>
+<script src="assets/js/script.js"></script>
+</body>
+
+</html>
