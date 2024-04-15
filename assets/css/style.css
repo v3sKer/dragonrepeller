@@ -28,12 +28,16 @@
 
 body {
     background-color: #191919;
-    font-size: 62.5%
+    font-size: 62.5%;
+    height: 100svh;
+    margin: 16px 0 0 0;
+    padding: 0;
+    overflow: hidden;
 }
 
 #game {
     max-width: 500px;
-    max-height: 400px;
+    min-width: 250px;
     font-size: 1rem;
     background-color: #303030;
     color: white;
@@ -53,12 +57,13 @@ body {
 
 .actionButton {
     margin: 0;
-    padding: 6px 12px;
+    padding: 6px 6px;
     border-radius: 8px;
     border: 1px solid #7e7e7e;
     color: #fff;
     background-color: #191919;
     transition: ease 0.2s;
+    line-height: 1.2rem;
 }
 
 .actionButton:hover {
@@ -85,8 +90,34 @@ body {
     color: white;
     padding: 5px;
     background-color: red;
+    margin-top: 8px;
+    border-radius: 8px;
 }
 
 .stat {
-    padding-right: 10px;
+    padding-right: 1rem;
 }
+
+.footer {
+    font-size: 1rem;
+    color: gray;
+    background-color: #242424;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 100%;
+    border-radius: 16px 16px 0 0;
+    border: 1px solid #5c5c5c;
+    position: fixed;
+    bottom: 0;
+}
+
+.footer a{
+    text-decoration: none; 
+    color: gray;
+    font-style: italic;
+    transition: 0.2s ease-out;
+}
+.footer a:hover {color: rgb(0, 122, 255); transition: 0.2s ease-out;}

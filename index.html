@@ -16,27 +16,33 @@
 </head>
 
 <body onload="statsUpdate()">
-<div id="game">
-    <div id="stats">
-        <span class="ft-bold stat"><i class="fas fa-heart" style="color: #b60000;"></i> <strong><span id="healthText">0</span></strong></span>
-        <span class="ft-bold stat"><i class="fas fa-coins" style="color: #ffe600;"></i> <strong><span id="goldText">0</span></strong></span>
-        <span class="ft-bold stat">XP: <strong><span id="xpText">0</span></strong></span>
-</div>
-    <div id="controls">
-        <button id="button1" class="ft-regular actionButton">Go to store</button>
-        <button id="button2" class="ft-regular actionButton">Go to cave</button>
-        <button id="button3" class="ft-regular actionButton">Fight dragon</button>
+    <div id="game">
+        <div id="stats">
+            <span class="ft-bold stat"><i class="fas fa-heart" style="color: #b60000;"></i> <strong><span id="healthText">0</span></strong></span>
+            <span class="ft-bold stat"><i class="fas fa-coins" style="color: #ffe600;"></i> <strong><span id="goldText">0</span></strong></span>
+            <span class="ft-bold stat">XP: <strong><span id="xpText">0</span></strong></span>
+        </div>
+        <div id="controls">
+            <button id="button1" class="ft-regular actionButton">Go to Linella</button>
+            <button id="button2" class="ft-regular actionButton">Go to Posta Veche</button>
+            <button id="button3" class="ft-regular actionButton">Fight dragon</button>
+        </div>
+        <div id="monsterStats">
+            <span class="stat">Monster Name: <strong><span id="monsterName">-</span></strong></span>
+            <span class="stat">Health: <strong><span id="monsterHealth">-</span></strong></span>
+        </div>
+        <div id="text" class="ft-console">Welcome to Dragon Repeller!<br>
+            <br>In this game, monsters attacked Chisinau from an extratestrial portal openned at Posta Veche by some gypsy witches from Soroca.
+            <br>There is a dragon which is preventing people from leaving Chisinau.
+            <br>Maia Sandu called you to save moldovan people in this disaster.<br>
+            <br>Now you are at town square. 
+            <br>Where do you want to go? Use the buttons above.
+        </div>
     </div>
-    <div id="monsterStats">
-        <span class="stat">Monster Name: <strong><span id="monsterName"></span></strong></span>
-        <span class="stat">Health: <strong><span id="monsterHealth"></span></strong></span>
+    <div class="ft-regular footer">
+        <p>by <a href="https://v3sker.site/" target="_blank">v3sker</a> | <a href="https://github.com/v3sKer/dragonrepeller" target="_blank">Source Code</a></p>
     </div>
-    <div class="ft-console" id="text">Welcome to Dragon Repeller!<br>
-        <br>In this game, you must defeat the dragon that is preventing people from leaving the town.<br>
-        <br>Now you are in the town square. 
-        <br>Where do you want to go? Use the buttons above.</div>
-</div>
-<script src="assets/js/script.js"></script>
+    <script src="assets/js/script.js"></script>
 </body>
 
 </html>
