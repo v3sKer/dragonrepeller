@@ -225,15 +225,17 @@ function attack() {
             text.innerText += "\n\nYour hand slips and you miss your hit!"
             playerDamage = 'no'
         }
-    } else if (inventory.lenght > 1 ) {
-        checkIfBrokeStick()
-        text.innerText += "\n\nYour " + inventory.pop() + " broke! You will use your last weapon."
-        playerDamage = 'no'
     } else {
-        checkIfBrokeStick()
-        text.innerText += "\n\nYour " + inventory.pop() + " broke! You found a stick on the floor and can continue the fight with it."
-        inventory.push('stick')
-        playerDamage = 'no'
+        if (inventory.length > 1) {
+            checkIfBrokeStick()
+            text.innerText += "\n\nYour " + inventory.pop() + " broke! You will use your last weapon."
+            playerDamage = 'no'
+        } else {
+            checkIfBrokeStick()
+            text.innerText += "\n\nYour " + inventory.pop() + " broke! You found a stick on the floor and can continue the fight with it."
+            inventory.push('stick')
+            playerDamage = 'no'
+        }
     }
     text.innerText += "\n\nPlayer gets: " + monsterDamage + " damage. Monster gets: " + playerDamage + " damage."
     statsUpdate()
