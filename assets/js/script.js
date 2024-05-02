@@ -264,7 +264,7 @@ function getPlayerAttackValue() {
 
 // Randomizers
 function isMonsterHit() {return Math.random() > .2 || health < 20}
-function weaponBroke() {return Math.random() < 0.05}// End radnomizers
+function weaponBroke() {return Math.random() < 0.005}// End radnomizers
 
 function checkIfBrokeStick() {
     if (currentWeapon === 0) {
