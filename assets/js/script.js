@@ -1,3 +1,4 @@
+// Initializing main variables
 let xp = 0
 let health = 100
 let gold = 20
@@ -9,6 +10,7 @@ let inventory = ['stick']
 let monsterDamage
 let playerDamage
 
+// Initializing HTML parts as variables
 const button1 = document.querySelector("#button1")
 const button2 = document.querySelector("#button2")
 const button3 = document.querySelector("#button3")
@@ -20,7 +22,7 @@ const monsterStats = document.querySelector("#monsterStats")
 const monsterNameText = document.querySelector("#monsterName")
 const monsterHealthText = document.querySelector("#monsterHealth")
 
-const weapons = [
+const weapons = [ // Object array of weapons
     {
         name: "stick",
         power: 5
@@ -39,6 +41,8 @@ const weapons = [
     }
 ];
 
+
+// Object array of locations, values used to change buttons text in-game
 const locations = [
     {
         name: "town square",
@@ -89,7 +93,7 @@ const locations = [
     }
 ]
 
-const monsters = [
+const monsters = [  // Object array of enemies
     {
         name: "slime",
         level: 5,
@@ -107,23 +111,22 @@ const monsters = [
     }
 ]
 
-function statsUpdate() {
+function statsUpdate() {  // Syncgronizing stats HTML text with variable
     healthText.innerText = health
     goldText.innerText = gold
     xpText.innerText = xp
 }
 
-function inventoryText() {
+function inventoryText() {  // Showing invetory of player in the bottom of the game console
     text.innerText += "\n\nInventory: " + inventory
 }
 
-// Initializing buttons
+// Initializing play buttons
 button1.onclick = goStore
 button2.onclick = goCave
 button3.onclick = fightDragon
 
-// Locations section
-function update(location) {
+function update(location) { // Locations section
     monsterStats.style.display = "none"
     button1.innerText = location["button text"][0]
     button2.innerText = location["button text"][1]
@@ -140,19 +143,24 @@ function weaponsMenu() {update(locations[2]);inventoryText()}
 function backToShop() {update(locations[1]);inventoryText()}
 function goCave() {update(locations[3])}// End locations section
 
-// Store section
-function buyHealth() {
-    if (gold >= 10) {
-        gold -= 10
-        health += 10
-        statsUpdate()
-        text.innerText = "You bought a bottle of Bifidoc.\nAfter you drank it, you feel stronger, just like you got more health."
-        inventoryText()
+
+function buyHealth() { // Store section
+  if (gold >= 10) {
+    if (health < 150) {
+      gold -= 10
+      health += 10
+      statsUpdate()
+      text.innerText = "You bought a bottle of Bifidoc.\nAfter you drank it, you feel stronger, just like you got more health."
+      inventoryText()  
     } else {
-        text.innerText = "Not enough gold to buy more health."
-        inventoryText()
-    }
-}
+      text.innerText = "You reached maximum concentration of Bifidoc in your blood. (too much HP)"
+      inventoryText()
+    };
+  } else {
+    text.innerText = "Not enough gold to buy more health."
+    inventoryText()
+  };
+};
 
 function buyWeapon() {
     if (currentWeapon < weapons.length - 1) {
@@ -219,8 +227,8 @@ function attack() {
 
     if (weaponBroke() === false){
         if (isMonsterHit() === true ){
-            monsterHealth -= getPlayerAttackValue()
-            playerDamage = getPlayerAttackValue()
+            playerDamage = getPlayerAttackValue();
+            monsterHealth -= playerDamage;
         } else {
             text.innerText += "\n\nYour hand slips and you miss your hit!"
             playerDamage = 'no'
@@ -237,6 +245,7 @@ function attack() {
             playerDamage = 'no'
         }
     }
+
     text.innerText += "\n\nPlayer gets: " + monsterDamage + " damage. Monster gets: " + playerDamage + " damage."
     statsUpdate()
     monsterStatsUpdate()
@@ -253,8 +262,8 @@ function attack() {
 }
 
 function getMonsterAttackValue(level){
-    let hit = (level) - (Math.floor(Math.random() * 6))
-    if (hit >= 0) {return hit} else {hit = 0;return hit}
+    let hit = (level) + (Math.floor(Math.random() * 6))
+    if (hit >= 0) {return hit} else {hit = 0; return hit}
 }
 
 function getPlayerAttackValue() {
@@ -281,8 +290,8 @@ function dodge() {
 
 // Victory/defeat
 function monsterDeath() {
-    gold += Math.floor(monsterDamage * 3)
-    xp += Math.floor(monsterDamage * 3)
+    gold += Math.floor(monsterDamage * 2)
+    xp += Math.floor(monsterDamage * 2)
     statsUpdate()
     update(locations[5])
     text.innerText += "\n\nYou gain " + monsterDamage + " experience and loot " + monsterDamage + " gold!" 
